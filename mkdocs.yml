@@ -1,16 +1,16 @@
 # Project information
-site_name: REPO_NAME_OR_SITE_NAME
+site_name: LM_DVC_NLP_Project-with-docs
 # defeine TOC or order of website-
 nav:
   - Home: index.md
 
-site_author: Sunny Bhaveen Chandra
+site_author: Lalit Mohan
 site_description: >-
   DESCRIPTION
 
 # Repository
-repo_name: c17hawke/REPO_NAME
-repo_url: https://github.com/c17hawke/REPO_NAME
+repo_name: lmohan171/REPO_NAME
+repo_url: https://github.com/lmohan171/REPO_NAME
 
 # Configuration
 theme:
@@ -39,13 +39,12 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/c17hawke
+      link: https://github.com/lmohan171
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/c17hawke
+      link: https://twitter.com/LalitMo97574047
     - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/c17hawke
-    - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/c17hawke/
+      link: https://www.linkedin.com/in/lalit-mohan-b8a17b14/
+    
 
 extra_javascript:
   - javascripts/mathjax.js
@@ -70,4 +69,4 @@ plugins:
   - search
 
 copyright: |
-  &copy; 2022 <a href="https://github.com/c17hawke"  target="_blank" rel="noopener">Sunny Bhaveen Chandra</a>
+  &copy; 2022 <a href="https://github.com/lmohan171"  target="_blank" rel="noopener">Lalit Mohan</a>
