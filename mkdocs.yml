@@ -10,8 +10,8 @@ site_description: >-
   DESCRIPTION
 
 # Repository
-repo_name: lmohan171/REPO_NAME
-repo_url: https://github.com/lmohan171/REPO_NAME
+repo_name: lmohan171/LM_DVC_NLP_Project-with-docs
+repo_url: https://github.com/lmohan171/LM_DVC_NLP_Project-with-docs
 
 # Configuration
 theme:
