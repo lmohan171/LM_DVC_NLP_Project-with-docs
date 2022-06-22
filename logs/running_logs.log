@@ -130,3 +130,23 @@ Traceback (most recent call last):
   File "src/stage_01_prepare_data.py", line 32, in main
     split=params['prepare']['split']#split ratio
 TypeError: string indices must be integers
+[2022-06-22 18:27:55,648: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-22 18:27:55,649: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-22 18:27:55,651: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-22 18:27:55,652: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-22 18:27:55,652: ERROR: stage_01_prepare_data]: module 'os' has no attribute 'join'
+Traceback (most recent call last):
+  File "src/stage_01_prepare_data.py", line 63, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_01_prepare_data.py", line 38, in main
+    prepare_data_dir_path=os.join(artifacts['ARTIFACTS_DIR'],artifacts['PREPARED_DATA'])
+AttributeError: module 'os' has no attribute 'join'
+[2022-06-22 18:31:15,890: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-22 18:31:15,891: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-22 18:31:15,894: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-22 18:31:15,896: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-22 18:31:15,897: INFO: common]: created directory at: artifacts\prepared
+[2022-06-22 18:31:18,335: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
