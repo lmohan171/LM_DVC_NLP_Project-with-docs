@@ -3,7 +3,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 corpus=[
     'zebr apple ball cat',
     'ball cat dog elephant',
-    'very very unique'
+    'very very unizque'
 ]
 
 vectorizer= CountVectorizer()
