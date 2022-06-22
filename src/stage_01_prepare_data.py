@@ -25,7 +25,7 @@ def main(config_path, params_path):
     config = read_yaml(config_path)
     params = read_yaml(params_path)
 
-    source_data_dir= config['source_data']['data_dir']
+    source_data_dir= config['source_data'] ['data_dir']
     source_data_file=config['sourct_data']['data_file']
     source_data_path=os.path.join(source_data_dir, source_data_file)
 
