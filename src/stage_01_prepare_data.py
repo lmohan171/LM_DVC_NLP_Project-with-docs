@@ -29,14 +29,14 @@ def main(config_path, params_path):
     source_data_file=config['sourct_data']['data_file']
     source_data_path=os.path.join(source_data_dir, source_data_file)
 
-    split=params['prepare']['split']#split ration
+    split=params['prepare']['split']#split ratio
     seed=params['prepare']['seed']
 
     random.seed(seed)
 
     artifacts=config['artifacts']
     prepare_data_dir_path=os.join(artifacts['ARTIFACTS_DIR'],artifacts['PREPARED_DATA'])
-    create_directories(['prepare_data_dir_path'])
+    create_directories([prepare_data_dir_path])
 
     train_data_path=os.path.join(prepare_data_dir_path,artifacts['TRAIN_DATA'])
     test_data_path=os.path.join(prepare_data_dir_path,artifacts['TEST_DATA'])
