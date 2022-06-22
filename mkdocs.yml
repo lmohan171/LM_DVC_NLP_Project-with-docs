@@ -4,6 +4,7 @@ site_name: LM_DVC_NLP_Project-with-docs
 nav:
   - Home: index.md
   - Data-prep-stage: data_prep.md
+  - Featurization: featurization.md
 
 site_author: Lalit Mohan
 site_description: >-
