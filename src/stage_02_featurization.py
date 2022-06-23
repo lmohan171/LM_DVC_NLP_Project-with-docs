@@ -1,4 +1,5 @@
 import argparse
+from optparse import Values
 import os
 import shutil
 import numpy as np
@@ -45,7 +46,7 @@ def main(config_path, params_path):
 #For train data
 
     df_train=get_df(train_data_path)
-    train_words=np.array(df_train.text.str.lower(),values.astype('U'))
+    train_words=np.array(df_train.text.str.lower().values.astype('U'))
 
     bag_of_words=CountVectorizer(
        stop_words="english",
@@ -66,7 +67,7 @@ def main(config_path, params_path):
 #For test data
 
     df_test=get_df(test_data_path)
-    test_words=np.array(df_test.text.str.lower(),values.astype('U'))
+    test_words=np.array(df_test.text.str.lower().values.astype('U'))
     test_words_binary_matrix=bag_of_words.transform(test_words)
     test_words_tfidf_matrix=tfidf.transform(test_words_binary_matrix)
 
