@@ -44,20 +44,20 @@ def main(config_path, params_path):
 
 #For train data
 
-   df_train=get_df(train_data_path)
-   train_words=np.array(df_train.text.str.lower(),values.astype('U'))
+    df_train=get_df(train_data_path)
+    train_words=np.array(df_train.text.str.lower(),values.astype('U'))
 
-   bag_of_words=CountVectorizer(
+    bag_of_words=CountVectorizer(
        stop_words="english",
        max_features=max_features,
        ngram_range=(1,n_grams)
-   )
+    )
 
-   bag_of_words.fit(train_words)
-   train_words_binary_matrix=bag_of_words.transform(train_words)
-   tfidf=TfidfTransformer(smooth_idf=False)
-   tfidf.fit(train_words_binary_matrix)
-   train_words_tfidf_matrix=tfidf.transform(train_words_binary_matrix)
+    bag_of_words.fit(train_words)
+    train_words_binary_matrix=bag_of_words.transform(train_words)
+    tfidf=TfidfTransformer(smooth_idf=False)
+    tfidf.fit(train_words_binary_matrix)
+    train_words_tfidf_matrix=tfidf.transform(train_words_binary_matrix)
 
 #Call this function to save the Matrix
 
@@ -65,10 +65,10 @@ def main(config_path, params_path):
 
 #For test data
 
-  df_test=get_df(test_data_path)
-  test_words=np.array(df_test.text.str.lower(),values.astype('U'))
-  test_words_binary_matrix=bag_of_words.transform(test_words)
-  test_words_tfidf_matrix=tfidf.transform(test_words_binary_matrix)
+    df_test=get_df(test_data_path)
+    test_words=np.array(df_test.text.str.lower(),values.astype('U'))
+    test_words_binary_matrix=bag_of_words.transform(test_words)
+    test_words_tfidf_matrix=tfidf.transform(test_words_binary_matrix)
 
 #Call this function to save the Matrix
 
