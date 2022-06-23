@@ -5,7 +5,7 @@ import numpy as np
 from tqdm import tqdm
 import logging
 from src.utils.common import read_yaml, create_directories, get_df
-from sklearn.feature_extraction.text import CountVectorizer, TfidTransformer
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 import random
 
 
@@ -40,22 +40,7 @@ def main(config_path, params_path):
     max_features=params['Featurize'] ['max_features']
     n_grams=params['Featurize'] ['n_grams']
 
-    #For train data
-
-   df_train=get_df(train_data_path)
-   train_words=np.array(df_train.text.str.lower(),values.astype('U'))
-
-   bag_of_words=CountVectorizer(
-       stop_words="english",
-       max_features=max_features,
-       ngram_range=(1,ngrams)
-   )
-
-   bag_of_words.fit(train_words)
-   train_words_binary_matrix=bag_of_words.transform(train_words)
-   tfidf=TfidTransformer(smooth_idf=False)
-   tfidf.fit(train_words_binary_matrix)
-   train_words_tfidf_matrix=tfid.Transform(train_words_binary_matrix)
+  
 
 #For train data
 
@@ -65,14 +50,14 @@ def main(config_path, params_path):
    bag_of_words=CountVectorizer(
        stop_words="english",
        max_features=max_features,
-       ngram_range=(1,ngrams)
+       ngram_range=(1,n_grams)
    )
 
    bag_of_words.fit(train_words)
    train_words_binary_matrix=bag_of_words.transform(train_words)
-   tfidf=TfidTransformer(smooth_idf=False)
+   tfidf=TfidfTransformer(smooth_idf=False)
    tfidf.fit(train_words_binary_matrix)
-   train_words_tfidf_matrix=tfid.Transform(train_words_binary_matrix)
+   train_words_tfidf_matrix=tfidf.transform(train_words_binary_matrix)
 
 #Call this function to save the Matrix
 
@@ -80,21 +65,12 @@ def main(config_path, params_path):
 
 #For test data
 
-   df_test=get_df(test_data_path)
-   test_words=np.array(df_test.text.str.lower(),values.astype('U'))
+  df_test=get_df(test_data_path)
+  test_words=np.array(df_test.text.str.lower(),values.astype('U'))
+  test_words_binary_matrix=bag_of_words.transform(test_words)
+  test_words_tfidf_matrix=tfidf.transform(test_words_binary_matrix)
 
-   bag_of_words=CountVectorizer(
-       stop_words="english",
-       max_features=max_features,
-       ngram_range=(1,ngrams)
-   )
-
-   bag_of_words.fit(test_words)
-   test_words_binary_matrix=bag_of_words.transform(test_words)
-   tfidf=TfidTransformer(smooth_idf=False)
-   tfidf.fit(test_words_binary_matrix)
-   test_words_tfidf_matrix=tfid.Transform(test_words_binary_matrix)
-
+#Call this function to save the Matrix
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
