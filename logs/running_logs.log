@@ -8,3 +8,100 @@
 [2022-06-23 23:45:09,288: INFO: common]: created directory at: artifacts\prepared
 [2022-06-23 23:45:11,541: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
 
+[2022-06-24 00:00:18,094: INFO: stage_02_featurization]: 
+********************
+[2022-06-24 00:00:18,094: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-24 00:00:18,097: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 00:00:18,099: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 00:00:18,100: INFO: common]: created directory at: artifacts\features
+[2022-06-24 00:00:18,337: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-24 00:00:18,377: ERROR: stage_02_featurization]: name 'values' is not defined
+Traceback (most recent call last):
+  File "src/stage_02_featurization.py", line 84, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_featurization.py", line 48, in main
+    train_words=np.array(df_train.text.str.lower(),values.astype('U'))
+NameError: name 'values' is not defined
+[2022-06-24 00:09:44,399: INFO: stage_02_featurization]: 
+********************
+[2022-06-24 00:09:44,399: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-24 00:09:44,403: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 00:09:44,405: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 00:09:44,405: INFO: common]: created directory at: artifacts\features
+[2022-06-24 00:09:44,638: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-24 00:09:44,671: ERROR: stage_02_featurization]: name 'value' is not defined
+Traceback (most recent call last):
+  File "src/stage_02_featurization.py", line 84, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_featurization.py", line 48, in main
+    train_words=np.array(df_train.text.str.lower(),value.astype('U'))
+NameError: name 'value' is not defined
+[2022-06-24 00:10:07,462: INFO: stage_02_featurization]: 
+********************
+[2022-06-24 00:10:07,462: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-24 00:10:07,465: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 00:10:07,467: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 00:10:07,467: INFO: common]: created directory at: artifacts\features
+[2022-06-24 00:10:07,682: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-24 00:10:07,713: ERROR: stage_02_featurization]: type object 'Values' has no attribute 'astype'
+Traceback (most recent call last):
+  File "src/stage_02_featurization.py", line 85, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_featurization.py", line 49, in main
+    train_words=np.array(df_train.text.str.lower(),Values.astype('U'))
+AttributeError: type object 'Values' has no attribute 'astype'
+[2022-06-24 00:23:21,714: INFO: stage_02_featurization]: 
+********************
+[2022-06-24 00:23:21,714: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-24 00:23:21,717: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 00:23:21,719: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 00:23:21,719: INFO: common]: created directory at: artifacts\features
+[2022-06-24 00:23:21,948: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-24 00:23:21,981: ERROR: stage_02_featurization]: type object 'Values' has no attribute 'astype'
+Traceback (most recent call last):
+  File "src/stage_02_featurization.py", line 85, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_featurization.py", line 49, in main
+    train_words=np.array(df_train.text.str.lower(),Values.astype('U'))
+AttributeError: type object 'Values' has no attribute 'astype'
+[2022-06-24 00:25:41,061: INFO: stage_02_featurization]: 
+********************
+[2022-06-24 00:25:41,061: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-24 00:25:41,064: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 00:25:41,065: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 00:25:41,065: INFO: common]: created directory at: artifacts\features
+[2022-06-24 00:25:41,296: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-24 00:25:41,325: ERROR: stage_02_featurization]: 'Series' object has no attribute 'Values'
+Traceback (most recent call last):
+  File "src/stage_02_featurization.py", line 85, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_featurization.py", line 49, in main
+    train_words=np.array(df_train.text.str.lower().Values.astype('U'))
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\pandas\core\generic.py", line 5141, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'Series' object has no attribute 'Values'
+[2022-06-24 00:26:06,197: INFO: stage_02_featurization]: 
+********************
+[2022-06-24 00:26:06,197: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-24 00:26:06,200: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 00:26:06,201: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 00:26:06,201: INFO: common]: created directory at: artifacts\features
+[2022-06-24 00:26:06,435: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-24 00:26:20,652: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7550, 3) is read.
+[2022-06-24 00:26:20,666: ERROR: stage_02_featurization]: name 'values' is not defined
+Traceback (most recent call last):
+  File "src/stage_02_featurization.py", line 85, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_featurization.py", line 70, in main
+    test_words=np.array(df_test.text.str.lower(),values.astype('U'))
+NameError: name 'values' is not defined
+[2022-06-24 00:26:56,510: INFO: stage_02_featurization]: 
+********************
+[2022-06-24 00:26:56,510: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-24 00:26:56,513: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 00:26:56,514: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 00:26:56,514: INFO: common]: created directory at: artifacts\features
+[2022-06-24 00:26:56,741: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-24 00:27:09,913: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7550, 3) is read.
+[2022-06-24 00:27:12,402: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
+
