@@ -26,7 +26,7 @@ def save_json(path: str, data: dict) -> None:
 
 def get_df(
     path_to_data:str, 
-    sep=str="\t", 
+    sep:str="\t", 
     column_names:list=["id", "label", "text"],
     encoding='utf-8')->pd.DataFrame:
     df=pd.read_csv(
