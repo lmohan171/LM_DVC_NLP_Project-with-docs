@@ -26,15 +26,15 @@ def save_json(path: str, data: dict) -> None:
 
 def get_df(
     path_to_data:str, 
-    sep="str"="\t", 
-    columns_names:List=["id", "label", "text"],
+    sep=str="\t", 
+    column_names:list=["id", "label", "text"],
     encoding='utf-8')->pd.DataFrame:
     df=pd.read_csv(
         path_to_data,
         delimiter=sep,
         encoding=encoding,
-        header=none,
-        names=columns_names,
+        header=None,
+        names=column_names,
     )
-    logging.info(f"The input data from {path_to_dat} of size {df.shape} is read.")
+    logging.info(f"The input data frame {path_to_data} of size {df.shape} is read.")
     return df
