@@ -8,6 +8,7 @@ import logging
 from src.utils import read_yaml, create_directories, get_df, save_matrix
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 import random
+import pandas as pd
 
 
 STAGE = "Featurization" ## <<< change stage name 
@@ -61,7 +62,7 @@ def main(config_path, params_path):
     train_words_tfidf_matrix=tfidf.transform(train_words_binary_matrix)
 
     #Call this function to save the Matrix to use for training purpose later
-    save_matrix(df=df_train, matrix= train_words_tfidf_matrix , out_path=featurized_train_data_path)
+    save_matrix(df=df_train, text_matrix= train_words_tfidf_matrix , out_path=featurized_train_data_path)
 
 
     #For test data
@@ -72,7 +73,7 @@ def main(config_path, params_path):
     test_words_tfidf_matrix=tfidf.transform(test_words_binary_matrix)
 
     #Call this function to save the Matrix
-    save_matrix(df=df_test, matrix= test_words_tfidf_matrix , out_path=featurized_test_data_path)
+    save_matrix(df=df_test, text_matrix= test_words_tfidf_matrix , out_path=featurized_test_data_path)
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
