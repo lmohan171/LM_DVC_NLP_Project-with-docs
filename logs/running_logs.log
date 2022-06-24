@@ -113,3 +113,67 @@ NameError: name 'values' is not defined
 [2022-06-24 16:03:42,060: INFO: common]: created directory at: artifacts\prepared
 [2022-06-24 16:03:44,321: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
 
+[2022-06-24 16:05:32,682: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-24 16:05:32,683: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-24 16:05:32,685: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 16:05:32,686: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 16:05:32,687: INFO: common]: created directory at: artifacts\prepared
+[2022-06-24 16:05:34,949: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
+[2022-06-24 18:28:00,852: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-24 18:28:00,852: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-24 18:28:00,854: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 18:28:00,855: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 18:28:00,856: INFO: common]: created directory at: artifacts\prepared
+[2022-06-24 18:28:03,346: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
+[2022-06-24 20:32:59,639: INFO: stage_02_featurization]: 
+********************
+[2022-06-24 20:32:59,640: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-24 20:32:59,642: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 20:32:59,643: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 20:32:59,643: INFO: common]: created directory at: artifacts\features
+[2022-06-24 20:32:59,899: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-24 20:32:59,904: ERROR: stage_02_featurization]: 'DataFrame' object has no attribute 'text'
+Traceback (most recent call last):
+  File "src/stage_02_featurization.py", line 86, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_featurization.py", line 49, in main
+    train_words=np.array(df_train.text.str.lower().values.astype('U'))
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\pandas\core\generic.py", line 5141, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'text'
+[2022-06-24 20:44:55,582: INFO: stage_02_featurization]: 
+********************
+[2022-06-24 20:44:55,583: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-24 20:44:55,585: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 20:44:55,586: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 20:44:55,586: INFO: common]: created directory at: artifacts\features
+[2022-06-24 20:44:55,810: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-24 20:44:55,810: ERROR: stage_02_featurization]: 'DataFrame' object has no attribute 'text'
+Traceback (most recent call last):
+  File "src/stage_02_featurization.py", line 86, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_featurization.py", line 49, in main
+    train_words=np.array(df_train.text.str.lower().values.astype('U'))
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\pandas\core\generic.py", line 5141, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'text'
+[2022-06-24 20:47:30,602: INFO: stage_02_featurization]: 
+********************
+[2022-06-24 20:47:30,602: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-24 20:47:30,605: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 20:47:30,606: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 20:47:30,606: INFO: common]: created directory at: artifacts\features
+[2022-06-24 20:47:30,828: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-24 20:47:30,828: ERROR: stage_02_featurization]: 'DataFrame' object has no attribute 'text'
+Traceback (most recent call last):
+  File "src/stage_02_featurization.py", line 86, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_featurization.py", line 49, in main
+    train_words=np.array(df_train.text.str.lower().values.astype('U'))
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\pandas\core\generic.py", line 5141, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'text'
