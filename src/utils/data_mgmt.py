@@ -4,11 +4,13 @@ import random
 import xml.etree.ElementTree as ET #to read the xml tags
 import re
 import joblib
+import scipy.sparse as sparse
+import numpy as np
 
 
 def process_posts(fd_in, fd_out_train, fd_out_test,target_tag,split):
     line_num=1
-    column_names="pid\t label\t text\n"
+    column_names="pid\tlabel\ttext\n"
     fd_out_train.write(column_names)
     fd_out_test.write(column_names)
 
@@ -30,5 +32,13 @@ def process_posts(fd_in, fd_out_train, fd_out_test,target_tag,split):
             msg=f"Skipping the broken lines{line_num}:{e}\n"
             logging.exception(msg)
 
-def save_matrix(df, matrix, out_path):
-    id_matrix=df.pid
+def save_matrix(df, text_matrix, out_path):
+    pid_matrix=sparse.csr_matrix(df.pid.astype(np.int64)).T
+    label_matrix=sparse.csr_matrix(df.pid.astype(np.int64)).T
+
+    result=sparse.hstack([pid_matrix, label_matrix, text_matrix])
+
+    msg=f'The output matrix saved at {out_path} of shape:{result.shape}'
+    logging.info(msg)
+    
+    joblib.dump(result, out_path)
