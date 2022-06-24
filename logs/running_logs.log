@@ -105,3 +105,11 @@ NameError: name 'values' is not defined
 [2022-06-24 00:27:09,913: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7550, 3) is read.
 [2022-06-24 00:27:12,402: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
 
+[2022-06-24 16:03:42,054: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-24 16:03:42,055: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-24 16:03:42,059: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-24 16:03:42,060: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-24 16:03:42,060: INFO: common]: created directory at: artifacts\prepared
+[2022-06-24 16:03:44,321: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
