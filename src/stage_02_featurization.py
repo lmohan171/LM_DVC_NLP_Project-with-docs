@@ -5,7 +5,7 @@ import shutil
 import numpy as np
 from tqdm import tqdm
 import logging
-from src.utils.common import read_yaml, create_directories, get_df
+from src.utils import read_yaml, create_directories, get_df, save_matrix
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 import random
 
@@ -27,7 +27,7 @@ def main(config_path, params_path):
     
     artifacts=config['artifacts']
     prepare_data_dir_path=os.path.join(artifacts['ARTIFACTS_DIR'],artifacts['PREPARED_DATA'])
-    
+
     train_data_path=os.path.join(prepare_data_dir_path,artifacts['TRAIN_DATA'])
     test_data_path=os.path.join(prepare_data_dir_path,artifacts['TEST_DATA'])
 
@@ -49,9 +49,9 @@ def main(config_path, params_path):
     train_words=np.array(df_train.text.str.lower().values.astype('U'))
 
     bag_of_words=CountVectorizer(
-       stop_words="english",
-       max_features=max_features,
-       ngram_range=(1,n_grams)
+        stop_words="english",
+        max_features=max_features,
+        ngram_range=(1,n_grams)
     )
 
     bag_of_words.fit(train_words)
@@ -60,18 +60,19 @@ def main(config_path, params_path):
     tfidf.fit(train_words_binary_matrix)
     train_words_tfidf_matrix=tfidf.transform(train_words_binary_matrix)
 
-#Call this function to save the Matrix to use for training purpose later
+    #Call this function to save the Matrix to use for training purpose later
+    save_matrix(df=df_train, matrix= train_words_tfidf_matrix , out_path=featurized_train_data_path)
 
 
-
-#For test data
+    #For test data
 
     df_test=get_df(test_data_path)
     test_words=np.array(df_test.text.str.lower().values.astype('U'))
     test_words_binary_matrix=bag_of_words.transform(test_words)
     test_words_tfidf_matrix=tfidf.transform(test_words_binary_matrix)
 
-#Call this function to save the Matrix
+    #Call this function to save the Matrix
+    save_matrix(df=df_test, matrix= test_words_tfidf_matrix , out_path=featurized_test_data_path)
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
