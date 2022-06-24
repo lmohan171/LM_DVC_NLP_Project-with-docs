@@ -60,7 +60,7 @@ def main(config_path, params_path):
     tfidf.fit(train_words_binary_matrix)
     train_words_tfidf_matrix=tfidf.transform(train_words_binary_matrix)
 
-#Call this function to save the Matrix
+#Call this function to save the Matrix to use for training purpose later
 
 
 
