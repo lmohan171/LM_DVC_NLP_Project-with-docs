@@ -19,7 +19,7 @@ def process_posts(fd_in, fd_out_train, fd_out_test,target_tag,split):
             fd_out=fd_out_train if random.random() > split else fd_out_test
             attr=ET.fromstring(line).attrib #Getting the tags using ET
 
-            pid=attr.get('ID', '')
+            pid=attr.get('Id', '')
             label= 1 if target_tag in attr.get('Tags','') else 0
             title=re.sub(r'\s+',' ', attr.get('Title','')).strip()
             body=re.sub(r'\s+',' ', attr.get('Body','')).strip()

@@ -1,4 +1,3 @@
-add stages here 
 stages:
   data_preparation:
     cmd: python src/stage_01_prepare_data.py
