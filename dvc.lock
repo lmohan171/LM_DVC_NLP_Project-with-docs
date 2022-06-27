@@ -26,8 +26,8 @@ stages:
       size: 40491839
       nfiles: 4
     - path: src/stage_02_featurization.py
-      md5: 4e5b9e8c4c88d87e505c9bb82d3911cc
-      size: 3206
+      md5: 4b910d2c232712d47252f21b114c1c90
+      size: 3207
     - path: src/utils
       md5: 81361d3a1beb6b0b5e285b5a0b4be223.dir
       size: 7217

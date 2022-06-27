@@ -203,3 +203,86 @@ ValueError: Cannot convert non-finite values (NA or inf) to integer
 [2022-06-26 15:55:21,812: INFO: data_mgmt]: The output matrix saved at artifacts\prepared\test.pkl of shape:(7550, 2502)
 [2022-06-26 15:55:22,142: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
 
+[2022-06-26 20:21:55,430: INFO: stage_02_featurization]: 
+********************
+[2022-06-26 20:21:55,430: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-26 20:21:55,433: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-26 20:21:55,435: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-26 20:21:55,435: INFO: common]: created directory at: artifacts\features
+[2022-06-26 20:21:55,666: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-26 20:22:08,926: INFO: data_mgmt]: The output matrix saved at artifacts\prepared\train.pkl of shape:(17450, 2502)
+[2022-06-26 20:22:09,030: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7550, 3) is read.
+[2022-06-26 20:22:11,267: INFO: data_mgmt]: The output matrix saved at artifacts\prepared\test.pkl of shape:(7550, 2502)
+[2022-06-26 20:22:11,552: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
+
+[2022-06-26 20:28:43,953: INFO: stage_02_featurization]: 
+********************
+[2022-06-26 20:28:43,955: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-26 20:28:43,957: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-26 20:28:43,958: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-26 20:28:43,959: INFO: common]: created directory at: artifacts\features
+[2022-06-26 20:28:44,176: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-26 20:28:57,819: INFO: data_mgmt]: The output matrix saved at artifacts\prepared\train.pkl of shape:(17450, 2502)
+[2022-06-26 20:28:57,929: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7550, 3) is read.
+[2022-06-26 20:29:00,327: INFO: data_mgmt]: The output matrix saved at artifacts\prepared\test.pkl of shape:(7550, 2502)
+[2022-06-26 20:29:00,629: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
+
+[2022-06-26 20:30:54,655: INFO: stage_02_featurization]: 
+********************
+[2022-06-26 20:30:54,655: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-26 20:30:54,657: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-26 20:30:54,659: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-26 20:30:54,660: INFO: common]: created directory at: artifacts\features
+[2022-06-26 20:30:54,903: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-26 20:31:10,200: INFO: data_mgmt]: The output matrix saved at artifacts\prepared\train.pkl of shape:(17450, 2502)
+[2022-06-26 20:31:10,331: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7550, 3) is read.
+[2022-06-26 20:31:13,297: INFO: data_mgmt]: The output matrix saved at artifacts\prepared\test.pkl of shape:(7550, 2502)
+[2022-06-26 20:31:13,685: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
+
+[2022-06-27 21:30:10,060: INFO: stage_03_training]: 
+********************
+[2022-06-27 21:30:10,062: INFO: stage_03_training]: >>>>> stage TRAINING_STAGE started <<<<<
+[2022-06-27 21:30:10,066: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-27 21:30:10,067: ERROR: stage_03_training]: while scanning a simple key
+  in "params.yaml", line 15, column 3
+could not find expected ':'
+  in "params.yaml", line 16, column 1
+Traceback (most recent call last):
+  File "src/stage_03_training.py", line 83, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_training.py", line 27, in main
+    params = read_yaml(params_path)
+  File "c:\users\lmohan2\dvc-project-docs-template\lm_dvc_nlp_project-with-docs\src\utils\common.py", line 11, in read_yaml
+    content = yaml.safe_load(yaml_file)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\parser.py", line 98, in check_event
+    self.current_event = self.state()
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\parser.py", line 428, in parse_block_mapping_key
+    if self.check_token(KeyToken):
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\scanner.py", line 115, in check_token
+    while self.need_more_tokens():
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\scanner.py", line 152, in need_more_tokens
+    self.stale_possible_simple_keys()
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\scanner.py", line 292, in stale_possible_simple_keys
+    "could not find expected ':'", self.get_mark())
+yaml.scanner.ScannerError: while scanning a simple key
+  in "params.yaml", line 15, column 3
+could not find expected ':'
+  in "params.yaml", line 16, column 1
