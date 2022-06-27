@@ -286,3 +286,166 @@ yaml.scanner.ScannerError: while scanning a simple key
   in "params.yaml", line 15, column 3
 could not find expected ':'
   in "params.yaml", line 16, column 1
+[2022-06-27 22:54:54,246: INFO: stage_03_training]: 
+********************
+[2022-06-27 22:54:54,247: INFO: stage_03_training]: >>>>> stage TRAINING_STAGE started <<<<<
+[2022-06-27 22:54:54,249: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-27 22:54:54,250: ERROR: stage_03_training]: while scanning a simple key
+  in "params.yaml", line 15, column 3
+could not find expected ':'
+  in "params.yaml", line 16, column 1
+Traceback (most recent call last):
+  File "src/stage_03_training.py", line 84, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_training.py", line 27, in main
+    params = read_yaml(params_path)
+  File "c:\users\lmohan2\dvc-project-docs-template\lm_dvc_nlp_project-with-docs\src\utils\common.py", line 11, in read_yaml
+    content = yaml.safe_load(yaml_file)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\parser.py", line 98, in check_event
+    self.current_event = self.state()
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\parser.py", line 428, in parse_block_mapping_key
+    if self.check_token(KeyToken):
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\scanner.py", line 115, in check_token
+    while self.need_more_tokens():
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\scanner.py", line 152, in need_more_tokens
+    self.stale_possible_simple_keys()
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\yaml\scanner.py", line 292, in stale_possible_simple_keys
+    "could not find expected ':'", self.get_mark())
+yaml.scanner.ScannerError: while scanning a simple key
+  in "params.yaml", line 15, column 3
+could not find expected ':'
+  in "params.yaml", line 16, column 1
+[2022-06-27 23:13:45,054: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-27 23:13:45,054: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-27 23:13:45,056: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-27 23:13:45,058: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-27 23:13:45,059: INFO: common]: created directory at: artifacts\prepared
+[2022-06-27 23:13:47,538: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
+[2022-06-27 23:13:50,046: INFO: stage_02_featurization]: 
+********************
+[2022-06-27 23:13:50,046: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-27 23:13:50,049: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-27 23:13:50,051: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-27 23:13:50,052: INFO: common]: created directory at: artifacts\features
+[2022-06-27 23:13:50,295: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-27 23:14:03,713: INFO: data_mgmt]: The output matrix saved at artifacts\features\train.pkl of shape:(17450, 2502)
+[2022-06-27 23:14:03,816: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7550, 3) is read.
+[2022-06-27 23:14:06,005: INFO: data_mgmt]: The output matrix saved at artifacts\features\test.pkl of shape:(7550, 2502)
+[2022-06-27 23:14:06,305: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
+
+[2022-06-27 23:15:39,584: INFO: stage_03_training]: 
+********************
+[2022-06-27 23:15:39,584: INFO: stage_03_training]: >>>>> stage TRAINING_STAGE started <<<<<
+[2022-06-27 23:15:39,587: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-27 23:15:39,588: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-27 23:15:39,589: INFO: common]: created directory at: a
+[2022-06-27 23:15:39,589: INFO: common]: created directory at: r
+[2022-06-27 23:15:39,590: INFO: common]: created directory at: t
+[2022-06-27 23:15:39,592: INFO: common]: created directory at: i
+[2022-06-27 23:15:39,593: INFO: common]: created directory at: f
+[2022-06-27 23:15:39,593: INFO: common]: created directory at: a
+[2022-06-27 23:15:39,593: INFO: common]: created directory at: c
+[2022-06-27 23:15:39,593: INFO: common]: created directory at: t
+[2022-06-27 23:15:39,594: INFO: common]: created directory at: s
+[2022-06-27 23:15:39,594: INFO: common]: created directory at: \
+[2022-06-27 23:15:39,594: INFO: common]: created directory at: m
+[2022-06-27 23:15:39,595: INFO: common]: created directory at: o
+[2022-06-27 23:15:39,595: INFO: common]: created directory at: d
+[2022-06-27 23:15:39,595: INFO: common]: created directory at: e
+[2022-06-27 23:15:39,596: INFO: common]: created directory at: l
+[2022-06-27 23:15:39,596: ERROR: stage_03_training]: 'function' object is not subscriptable
+Traceback (most recent call last):
+  File "src/stage_03_training.py", line 79, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_training.py", line 39, in main
+    model_path=os.path.join[model_dir_path, model_name]
+TypeError: 'function' object is not subscriptable
+[2022-06-27 23:23:46,682: INFO: stage_03_training]: 
+********************
+[2022-06-27 23:23:46,682: INFO: stage_03_training]: >>>>> stage TRAINING_STAGE started <<<<<
+[2022-06-27 23:23:46,685: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-27 23:23:46,686: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-27 23:23:46,686: INFO: common]: created directory at: a
+[2022-06-27 23:23:46,687: INFO: common]: created directory at: r
+[2022-06-27 23:23:46,687: INFO: common]: created directory at: t
+[2022-06-27 23:23:46,687: INFO: common]: created directory at: i
+[2022-06-27 23:23:46,687: INFO: common]: created directory at: f
+[2022-06-27 23:23:46,687: INFO: common]: created directory at: a
+[2022-06-27 23:23:46,687: INFO: common]: created directory at: c
+[2022-06-27 23:23:46,688: INFO: common]: created directory at: t
+[2022-06-27 23:23:46,688: INFO: common]: created directory at: s
+[2022-06-27 23:23:46,688: INFO: common]: created directory at: \
+[2022-06-27 23:23:46,688: INFO: common]: created directory at: m
+[2022-06-27 23:23:46,688: INFO: common]: created directory at: o
+[2022-06-27 23:23:46,688: INFO: common]: created directory at: d
+[2022-06-27 23:23:46,688: INFO: common]: created directory at: e
+[2022-06-27 23:23:46,689: INFO: common]: created directory at: l
+[2022-06-27 23:23:46,689: ERROR: stage_03_training]: [Errno 13] Permission denied: 'artifacts\\features'
+Traceback (most recent call last):
+  File "src/stage_03_training.py", line 79, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_training.py", line 41, in main
+    matrix=joblib.load(featurized_data_dir_path)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\joblib\numpy_pickle.py", line 579, in load
+    with open(filename, 'rb') as f:
+PermissionError: [Errno 13] Permission denied: 'artifacts\\features'
+[2022-06-27 23:37:27,965: INFO: stage_03_training]: 
+********************
+[2022-06-27 23:37:27,965: INFO: stage_03_training]: >>>>> stage TRAINING_STAGE started <<<<<
+[2022-06-27 23:37:27,968: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-27 23:37:27,970: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-27 23:37:27,971: INFO: common]: created directory at: a
+[2022-06-27 23:37:27,971: INFO: common]: created directory at: r
+[2022-06-27 23:37:27,971: INFO: common]: created directory at: t
+[2022-06-27 23:37:27,971: INFO: common]: created directory at: i
+[2022-06-27 23:37:27,971: INFO: common]: created directory at: f
+[2022-06-27 23:37:27,972: INFO: common]: created directory at: a
+[2022-06-27 23:37:27,972: INFO: common]: created directory at: c
+[2022-06-27 23:37:27,972: INFO: common]: created directory at: t
+[2022-06-27 23:37:27,972: INFO: common]: created directory at: s
+[2022-06-27 23:37:27,972: INFO: common]: created directory at: \
+[2022-06-27 23:37:27,972: INFO: common]: created directory at: m
+[2022-06-27 23:37:27,973: INFO: common]: created directory at: o
+[2022-06-27 23:37:27,973: INFO: common]: created directory at: d
+[2022-06-27 23:37:27,973: INFO: common]: created directory at: e
+[2022-06-27 23:37:27,973: INFO: common]: created directory at: l
+[2022-06-27 23:37:27,987: INFO: stage_03_training]: input_matrix_size:(17450, 2502)
+[2022-06-27 23:37:27,987: INFO: stage_03_training]: X matrix_size:(17450, 2500)
+[2022-06-27 23:37:27,987: INFO: stage_03_training]: Y matrix_size or labels:(2502,)
+[2022-06-27 23:37:27,999: ERROR: stage_03_training]: Found input variables with inconsistent numbers of samples: [17450, 2502]
+Traceback (most recent call last):
+  File "src/stage_03_training.py", line 79, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_training.py", line 63, in main
+    model.fit(X,labels)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\sklearn\ensemble\_forest.py", line 305, in fit
+    accept_sparse="csc", dtype=DTYPE)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\sklearn\base.py", line 433, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\sklearn\utils\validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\sklearn\utils\validation.py", line 888, in check_X_y
+    check_consistent_length(X, y)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\sklearn\utils\validation.py", line 320, in check_consistent_length
+    " samples: %r" % [int(l) for l in lengths])
+ValueError: Found input variables with inconsistent numbers of samples: [17450, 2502]
