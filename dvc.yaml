@@ -8,11 +8,12 @@ stages:
     outs:
     - artifacts/prepared
 
-  featurization:
-      cmd: python src/stage_02_featurization.py
+  
+  Train:
+      cmd: python src/stage_03_training.py
       deps:
       - src/stage_02_featurization.py
       - src/utils
-      - artifacts/prepared
-      outs:
       - artifacts/features
+      outs:
+      - artifacts/model/model.pkl

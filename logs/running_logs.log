@@ -1,1 +1,31 @@
 
+
+[2022-06-28 23:07:06,511: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-28 23:07:06,511: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-28 23:07:06,514: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-28 23:07:06,516: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-28 23:07:06,516: INFO: common]: created directory at: artifacts\prepared
+[2022-06-28 23:07:09,747: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
+[2022-06-28 23:07:59,495: INFO: stage_02_featurization]: 
+********************
+[2022-06-28 23:07:59,495: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-28 23:07:59,499: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-28 23:07:59,501: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-28 23:07:59,501: INFO: common]: created directory at: artifacts\features
+[2022-06-28 23:07:59,738: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-28 23:08:12,913: INFO: data_mgmt]: The output matrix saved at artifacts\features\train.pkl of shape:(17450, 2502)
+[2022-06-28 23:08:13,019: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7550, 3) is read.
+[2022-06-28 23:08:15,191: INFO: data_mgmt]: The output matrix saved at artifacts\features\test.pkl of shape:(7550, 2502)
+[2022-06-28 23:08:15,514: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
+
+[2022-06-29 00:49:22,055: INFO: stage_03_training]: 
+********************
+[2022-06-29 00:49:22,055: INFO: stage_03_training]: >>>>> stage TRAINING_STAGE started <<<<<
+[2022-06-29 00:49:22,058: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-29 00:49:22,059: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-29 00:49:22,060: INFO: common]: created directory at: artifacts\model
+[2022-06-29 00:49:22,075: INFO: stage_03_training]: input_matrix_size:(17450, 2502)
+[2022-06-29 00:49:22,075: INFO: stage_03_training]: X matrix_size:(17450, 2500)
+[2022-06-29 00:49:22,075: INFO: stage_03_training]: Y matrix_size or labels:(17450,)
