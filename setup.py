@@ -17,7 +17,7 @@ setup(
     description="A small package for DVC",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url=f"https://github.com/{lmohan171}",
+    url=f"https://github.com/lmohan171",
     author_email="lt72@rediffmail.com",
     packages=[SRC_REPO],
     license="MIT",
