@@ -65,3 +65,12 @@
 [2022-06-28 20:03:40,576: INFO: stage_03_training]: input_matrix_size:(17450, 2502)
 [2022-06-28 20:03:40,576: INFO: stage_03_training]: X matrix_size:(17450, 2500)
 [2022-06-28 20:03:40,576: INFO: stage_03_training]: Y matrix_size or labels:(17450,)
+[2022-06-28 20:36:44,515: INFO: stage_03_training]: 
+********************
+[2022-06-28 20:36:44,515: INFO: stage_03_training]: >>>>> stage TRAINING_STAGE started <<<<<
+[2022-06-28 20:36:44,523: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-28 20:36:44,527: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-28 20:36:44,529: INFO: common]: created directory at: artifacts\model
+[2022-06-28 20:36:44,561: INFO: stage_03_training]: input_matrix_size:(17450, 2502)
+[2022-06-28 20:36:44,562: INFO: stage_03_training]: X matrix_size:(17450, 2500)
+[2022-06-28 20:36:44,562: INFO: stage_03_training]: Y matrix_size or labels:(17450,)
