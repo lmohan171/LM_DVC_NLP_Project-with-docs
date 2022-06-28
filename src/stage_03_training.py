@@ -34,7 +34,7 @@ def main(config_path, params_path):
 
     model_dir=artifacts['MODEL_DIR']
     model_dir_path=os.path.join(artifacts['ARTIFACTS_DIR'], model_dir)
-    create_directories(model_dir_path)
+    create_directories([model_dir_path])
     model_name=artifacts['MODEL_NAME']
     model_path=os.path.join(model_dir_path, model_name)
 
