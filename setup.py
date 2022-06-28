@@ -13,11 +13,11 @@ LIST_OF_REQUIREMENTS = []
 setup(
     name=SRC_REPO,
     version="0.0.1",
-    author=lmohan171,
+    author="lmohan171",
     description="A small package for DVC",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url=f"https://github.com/{lmohan171}/{LM_DVC_NLP_PROJECT-WITH-DOCS}",
+    url=f"https://github.com/{lmohan171}",
     author_email="lt72@rediffmail.com",
     packages=[SRC_REPO],
     license="MIT",
