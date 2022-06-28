@@ -1,1 +1,44 @@
 
+[2022-06-28 19:56:55,473: INFO: stage_03_training]: 
+********************
+[2022-06-28 19:56:55,474: INFO: stage_03_training]: >>>>> stage TRAINING_STAGE started <<<<<
+[2022-06-28 19:56:55,477: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-28 19:56:55,478: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-28 19:56:55,478: INFO: common]: created directory at: a
+[2022-06-28 19:56:55,479: INFO: common]: created directory at: r
+[2022-06-28 19:56:55,479: INFO: common]: created directory at: t
+[2022-06-28 19:56:55,479: INFO: common]: created directory at: i
+[2022-06-28 19:56:55,479: INFO: common]: created directory at: f
+[2022-06-28 19:56:55,479: INFO: common]: created directory at: a
+[2022-06-28 19:56:55,479: INFO: common]: created directory at: c
+[2022-06-28 19:56:55,479: INFO: common]: created directory at: t
+[2022-06-28 19:56:55,480: INFO: common]: created directory at: s
+[2022-06-28 19:56:55,480: INFO: common]: created directory at: \
+[2022-06-28 19:56:55,480: INFO: common]: created directory at: m
+[2022-06-28 19:56:55,480: INFO: common]: created directory at: o
+[2022-06-28 19:56:55,480: INFO: common]: created directory at: d
+[2022-06-28 19:56:55,480: INFO: common]: created directory at: e
+[2022-06-28 19:56:55,480: INFO: common]: created directory at: l
+[2022-06-28 19:56:55,502: INFO: stage_03_training]: input_matrix_size:(17450, 2502)
+[2022-06-28 19:56:55,502: INFO: stage_03_training]: X matrix_size:(17450, 2500)
+[2022-06-28 19:56:55,502: INFO: stage_03_training]: Y matrix_size or labels:(17450,)
+[2022-06-28 20:00:12,516: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-28 20:00:12,517: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-28 20:00:12,520: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-28 20:00:12,523: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-28 20:00:12,523: INFO: common]: created directory at: artifacts\prepared
+[2022-06-28 20:00:17,540: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
+[2022-06-28 20:01:59,997: INFO: stage_02_featurization]: 
+********************
+[2022-06-28 20:01:59,997: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-28 20:02:00,000: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-28 20:02:00,002: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-28 20:02:00,003: INFO: common]: created directory at: artifacts\features
+[2022-06-28 20:02:00,387: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-28 20:02:25,249: INFO: data_mgmt]: The output matrix saved at artifacts\features\train.pkl of shape:(17450, 2502)
+[2022-06-28 20:02:25,450: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7550, 3) is read.
+[2022-06-28 20:02:29,546: INFO: data_mgmt]: The output matrix saved at artifacts\features\test.pkl of shape:(7550, 2502)
+[2022-06-28 20:02:29,956: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
+
