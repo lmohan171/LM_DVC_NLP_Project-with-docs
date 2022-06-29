@@ -40,8 +40,8 @@ def main(config_path, params_path):
 
     matrix=joblib.load(featurized_train_data_path)
 
-    labels=np.squeeze(matrix[:,1].toarray())
-    X=matrix[:,2:]
+    labels=np.squeeze(matrix[:, 1].toarray())
+    X=matrix[:, 2:]
 
     logging.info(f"input_matrix_size:{matrix.shape}")
     logging.info(f"X matrix_size:{X.shape}")
@@ -61,7 +61,7 @@ def main(config_path, params_path):
         random_state=seed
     )
 
-    model.fit(X,labels)
+    model.fit(X, labels)
 
     joblib.dump(model, model_path)
 
