@@ -41,15 +41,20 @@ def main(config_path, params_path):
     labels=np.squeeze(matrix[:,1].toarray())
     X=matrix[:,2:]
 
-    prediction=model.predict(X)
+    prediction_class=model.predict.proba(X)
+    predict=prediction_class[:1]
     print("predict")
 
-    PRC_jason_path=config['plots']['PRC']
-    ROC_jason_path=cofig['plots']['ROC']
-    scores_jason_path=config['metrics']['SCORES']
+    logging.info(f"labels, predict:{list(zip(labels, predict)}")
 
-    avg_prec=metrics.average_precision_score(labels, prediction)
-    roc_auc=metrics.roc_auc_score(labels, prediction)
+    PRC_json_path=config['plots']['PRC']
+    ROC_json_path=config['plots']['ROC']
+    scores_json_path=config['metrics']['SCORES']
+
+    avg_prec=metrics.average_precision_score(labels, predict)
+    roc_auc=metrics.roc_auc_score(labels, predict)
+
+    logging.info(f"len of labels:{len(labels)} and prediction: {len(predict)}")
 
     scores={
         avg_prec:"avg_prec",
@@ -58,27 +63,31 @@ def main(config_path, params_path):
 
     save_json(scores_jason_path,scores)
 
-    precision, recall, prc_threshold= metrics.precision_recall_curve(labels, prediction)
+    precision, recall, prc_threshold= metrics.precision_recall_curve(labels, predict)
     nth_point=math.ceil(len(prc_threshold)/1000)
-    prc_points=list(zip(precision, recall, prc_threshold))[::nth_point]
+    #prc_points=list(zip(precision, recall, prc_threshold))[::nth_point]
 
     logging.info(f"no. of prc points:{len(prc_points)}")
 
+    #logging.info(f"precision:{'precision}, \nrecall:{recall}, \nprc_threshold:{prc_threshold}")
+    
     prc_data={'prc':[
         {'precision':p, 'recall':r, 'threshold':t} for p, r, t in prc_points
     ]
     }
 
-    save_json(PRC_jason_path,prc_data)
+    save_json(PRC_json_path,prc_data)
 
     #for ROC curve
-    fpr, tpr, roc_threshold=metrics.roc_curve(labels, prediction)
+    fpr, tpr, roc_threshold=metrics.roc_curve(labels, predict)
+    roc_points=zip(fpr, tpr, roc_threshold)
     roc_data={
         'roc':[{'fpr':fp, 'tpr':tp, 'threshold':t} for fp, tp, t in zip(fpr, tpr, roc_threshold)]}
-    logging.info(f"no. of roc points:{len(list(roc_points))}")
+    
+    #logging.info(f"no. of roc points:{len(list(roc_points))}")
 
 
-    save_json(ROC_jason_path,roc_data)
+    save_json(ROC_json_path,roc_data)
 
 
 
