@@ -146,3 +146,12 @@ MemoryError: could not allocate 1143603200 bytes
 [2022-06-30 23:29:25,108: INFO: data_mgmt]: The output matrix saved at artifacts\features\test.pkl of shape:(7550, 2502)
 [2022-06-30 23:29:25,446: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
 
+[2022-06-30 23:29:52,293: INFO: stage_03_training]: 
+********************
+[2022-06-30 23:29:52,293: INFO: stage_03_training]: >>>>> stage TRAINING_STAGE started <<<<<
+[2022-06-30 23:29:52,295: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-30 23:29:52,297: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-30 23:29:52,297: INFO: common]: created directory at: artifacts\model
+[2022-06-30 23:29:52,311: INFO: stage_03_training]: input_matrix_size:(17450, 2502)
+[2022-06-30 23:29:52,311: INFO: stage_03_training]: X matrix_size:(17450, 2500)
+[2022-06-30 23:29:52,312: INFO: stage_03_training]: Y matrix_size or labels:(17450,)
