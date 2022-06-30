@@ -38,3 +38,111 @@
 [2022-06-29 22:42:36,591: INFO: stage_03_training]: input_matrix_size:(17450, 2502)
 [2022-06-29 22:42:36,591: INFO: stage_03_training]: X matrix_size:(17450, 2500)
 [2022-06-29 22:42:36,591: INFO: stage_03_training]: Y matrix_size or labels:(17450,)
+[2022-06-29 23:01:02,573: INFO: stage_03_training]: 
+********************
+[2022-06-29 23:01:02,573: INFO: stage_03_training]: >>>>> stage TRAINING_STAGE started <<<<<
+[2022-06-29 23:01:02,576: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-29 23:01:02,578: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-29 23:01:02,578: INFO: common]: created directory at: artifacts\model
+[2022-06-29 23:01:02,594: INFO: stage_03_training]: input_matrix_size:(17450, 2502)
+[2022-06-29 23:01:02,594: INFO: stage_03_training]: X matrix_size:(17450, 2500)
+[2022-06-29 23:01:02,594: INFO: stage_03_training]: Y matrix_size or labels:(17450,)
+[2022-06-29 23:13:43,384: INFO: stage_04_evaluate]: 
+********************
+[2022-06-29 23:13:43,385: INFO: stage_04_evaluate]: >>>>> stage EVALUATION started <<<<<
+[2022-06-29 23:13:43,391: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-29 23:13:43,394: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-29 23:13:43,394: ERROR: stage_04_evaluate]: [Errno 2] No such file or directory: 'artifacts\\model\\model.pkl'
+Traceback (most recent call last):
+  File "src/stage_04_evaluate.py", line 97, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_evaluate.py", line 38, in main
+    model=joblib.load(model_path)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\joblib\numpy_pickle.py", line 579, in load
+    with open(filename, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\model\\model.pkl'
+[2022-06-30 12:01:48,438: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-30 12:01:48,440: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-30 12:01:48,444: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-30 12:01:48,446: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-30 12:01:48,446: INFO: common]: created directory at: artifacts\prepared
+[2022-06-30 12:01:51,492: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
+[2022-06-30 12:40:12,401: INFO: stage_02_featurization]: 
+********************
+[2022-06-30 12:40:12,402: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-30 12:40:12,404: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-30 12:40:12,406: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-30 12:40:12,407: INFO: common]: created directory at: artifacts\features
+[2022-06-30 12:40:12,719: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-30 12:40:30,066: INFO: data_mgmt]: The output matrix saved at artifacts\features\train.pkl of shape:(17450, 2502)
+[2022-06-30 12:40:30,191: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7550, 3) is read.
+[2022-06-30 12:40:32,878: INFO: data_mgmt]: The output matrix saved at artifacts\features\test.pkl of shape:(7550, 2502)
+[2022-06-30 12:40:33,216: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
+
+[2022-06-30 12:40:56,459: INFO: stage_03_training]: 
+********************
+[2022-06-30 12:40:56,459: INFO: stage_03_training]: >>>>> stage TRAINING_STAGE started <<<<<
+[2022-06-30 12:40:56,462: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-30 12:40:56,463: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-30 12:40:56,464: INFO: common]: created directory at: artifacts\model
+[2022-06-30 12:40:56,480: INFO: stage_03_training]: input_matrix_size:(17450, 2502)
+[2022-06-30 12:40:56,480: INFO: stage_03_training]: X matrix_size:(17450, 2500)
+[2022-06-30 12:40:56,480: INFO: stage_03_training]: Y matrix_size or labels:(17450,)
+[2022-06-30 18:37:57,747: ERROR: stage_03_training]: could not allocate 1143603200 bytes
+Traceback (most recent call last):
+  File "src/stage_03_training.py", line 80, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_training.py", line 64, in main
+    model.fit(X, labels)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\sklearn\ensemble\_forest.py", line 393, in fit
+    for i, t in enumerate(trees))
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\joblib\parallel.py", line 1056, in __call__
+    self.retrieve()
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\joblib\parallel.py", line 935, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\multiprocessing\pool.py", line 644, in get
+    raise self._value
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\multiprocessing\pool.py", line 119, in worker
+    result = (True, func(*args, **kwds))
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\joblib\_parallel_backends.py", line 595, in __call__
+    return self.func(*args, **kwargs)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\joblib\parallel.py", line 263, in __call__
+    for func, args, kwargs in self.items]
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\joblib\parallel.py", line 263, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\sklearn\utils\fixes.py", line 222, in __call__
+    return self.function(*args, **kwargs)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\sklearn\ensemble\_forest.py", line 169, in _parallel_build_trees
+    tree.fit(X, y, sample_weight=curr_sample_weight, check_input=False)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\sklearn\tree\_classes.py", line 907, in fit
+    X_idx_sorted=X_idx_sorted)
+  File "C:\Users\lmohan2\Anaconda3\envs\env\lib\site-packages\sklearn\tree\_classes.py", line 394, in fit
+    builder.build(self.tree_, X, y, sample_weight)
+  File "sklearn\tree\_tree.pyx", line 136, in sklearn.tree._tree.DepthFirstTreeBuilder.build
+  File "sklearn\tree\_tree.pyx", line 233, in sklearn.tree._tree.DepthFirstTreeBuilder.build
+  File "sklearn\tree\_tree.pyx", line 734, in sklearn.tree._tree.Tree._add_node
+  File "sklearn\tree\_tree.pyx", line 706, in sklearn.tree._tree.Tree._resize_c
+  File "sklearn\tree\_utils.pyx", line 41, in sklearn.tree._utils.safe_realloc
+MemoryError: could not allocate 1143603200 bytes
+[2022-06-30 23:28:08,092: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-30 23:28:08,092: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-30 23:28:08,095: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-30 23:28:08,097: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-30 23:28:08,098: INFO: common]: created directory at: artifacts\prepared
+[2022-06-30 23:28:10,735: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
+[2022-06-30 23:29:09,444: INFO: stage_02_featurization]: 
+********************
+[2022-06-30 23:29:09,445: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-30 23:29:09,447: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-30 23:29:09,449: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-30 23:29:09,449: INFO: common]: created directory at: artifacts\features
+[2022-06-30 23:29:09,678: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17450, 3) is read.
+[2022-06-30 23:29:22,840: INFO: data_mgmt]: The output matrix saved at artifacts\features\train.pkl of shape:(17450, 2502)
+[2022-06-30 23:29:22,946: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7550, 3) is read.
+[2022-06-30 23:29:25,108: INFO: data_mgmt]: The output matrix saved at artifacts\features\test.pkl of shape:(7550, 2502)
+[2022-06-30 23:29:25,446: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
+
